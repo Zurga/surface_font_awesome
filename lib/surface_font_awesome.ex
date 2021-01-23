@@ -1,5 +1,32 @@
 defmodule SurfaceFontAwesome do
-  @moduledoc false
+  @moduledoc ~s[
+This library provides components that implement FontAwsome 5 functionality. Currently supported are
+
+-   Icons
+-   Dualtone Icons
+-   Icon layering (including text layers)
+-   Icon counters
+
+## Example usage
+
+```elixir
+alias SurfaceFontAwesome.Icon, as: FA
+alias SurfaceFontAwesome.Layers
+alias SurfaceFontAwesome.TextLayer
+
+
+~H"""
+<FA icon="camera" />
+"""
+
+~H"""
+<Layers>
+    <FA icon="calendar">
+    <TextLayer>28</TextLayer>
+</Layers>
+"""
+```
+]
   defmacro __using__(_) do
     quote do
       use Surface.Component

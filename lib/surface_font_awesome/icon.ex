@@ -1,7 +1,14 @@
 defmodule SurfaceFontAwesome.Icon do
-  @moduledoc """
+  @moduledoc ~s[
   A component that displays an icon compatible with the FontAwesome icons
-  """
+  
+  Examples:
+  ```elixir
+    ~H"""
+      <FA icon="camera" />
+    """
+  ]
+
   use SurfaceFontAwesome
 
   @icon_names :code.priv_dir(:surface_font_awesome)
