@@ -7,6 +7,8 @@ This library provides components that implement FontAwsome 5 functionality. Curr
 -   Icon layering (including text layers)
 -   Icon counters
 
+The FontAwesome 5 library is not included and should be included in your templates by yourself.
+
 ## Example usage
 
 ```elixir
