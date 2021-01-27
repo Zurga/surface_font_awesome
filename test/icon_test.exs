@@ -34,23 +34,23 @@ defmodule Surface.Components.IconTest do
            """
   end
 
-  test "setting the primary color" do
+  test "setting the primary color without duotone icon should be ignored" do
     code = """
     <FA icon="camera" primary_color="blue" />
     """
 
     assert render_live(code) =~ """
-           <i class="fas fa-camera" style="--fa-primary-color: blue"></i>
+           <i class="fas fa-camera"></i>
            """
   end
 
   test "setting the primary opacity and secondary color" do
     code = """
-    <FA icon="camera" secondary_color="blue" primary_opacity={{0.6}} />
+    <FA icon="camera" icon_style="duotone" secondary_color="blue" primary_opacity={{0.6}} />
     """
 
     assert render_live(code) =~ """
-           <i class="fas fa-camera" style="--fa-secondary-color: blue; --fa-primary-opacity: 0.6"></i>
+           <i class="fad fa-camera" style="--fa-secondary-color: blue; --fa-primary-opacity: 0.6"></i>
            """
   end
 

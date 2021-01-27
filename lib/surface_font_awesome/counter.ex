@@ -1,9 +1,21 @@
 defmodule SurfaceFontAwesome.CounterLayer do
-  use SurfaceFontAwesome
+  @doc """
+  This component will display a counter. It can be put on top of other icons by adding it to a `<Layers>` component.
+  Whatever is put inside the default slot will be the value of the counter. 
+  Positioning of the counter can be done using its `position` prop.
 
-  prop position, :string, values: ~w/bottom-left bottom-right top-left top-right/
+  Example:
+  ```elixir
+  ~H\"\"\"
+    <Layers>
+      <Icon icon="sms">
+      <CounterLayer position="top-right">233</CounterLayer>
+    </Layers>
+  \"\"\"
+  ```
+  """
 
-  slot default
+  use SurfaceFontAwesome, :counter_layer
 
   def render(assigns) do
     transforms = (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}

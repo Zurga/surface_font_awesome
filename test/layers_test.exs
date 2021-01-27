@@ -3,7 +3,7 @@ defmodule SurfaceFontAwesome.LayerTest do
 
   alias SurfaceFontAwesome.Icon, as: FA, warn: false
   alias SurfaceFontAwesome.Layers, as: FALayers, warn: false
-  alias SurfaceFontAwesome.TextLayer, warn: false
+  alias SurfaceFontAwesome.{TextLayer, CounterLayer}, warn: false
 
   import ComponentTestHelper
 
@@ -56,6 +56,24 @@ defmodule SurfaceFontAwesome.LayerTest do
              <span class="fa-layers fa-fw">
              <i class="fas fa-calendar"></i>
              <span data-fa-transform="shrink-8 down-3" class="fa-layers-text fa-inverse" style="font-weight: 900">27</span>
+             </span>
+             """
+             |> String.replace("\n", "")
+  end
+
+  test "add counter layer" do
+    code = """
+    <FALayers>
+      <FA icon="calendar"/>
+      <CounterLayer position="top-right" transform="shrink-8 down-3" style="font-weight:900">27</CounterLayer>
+    </FALayers>
+    """
+
+    assert render_live(code) =~
+             """
+             <span class="fa-layers fa-fw">
+             <i class="fas fa-calendar"></i>
+             <span data-fa-transform="shrink-8 down-3" class="fa-layers-counter fa-layers-top-right" style="font-weight: 900">27</span>
              </span>
              """
              |> String.replace("\n", "")

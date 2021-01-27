@@ -1,4 +1,18 @@
 defmodule SurfaceFontAwesome.TextLayer do
+  @doc """
+  A component that represents a text layer to be overlayed on icons.
+
+  Example:
+  ```elixir
+  ~H\"\"\"
+    <Layers>
+      <Icon icon="sms">
+      <TextLayer>New text!</TextLayer>
+    </Layers>
+  \"\"\"
+  ```
+
+  """
   use SurfaceFontAwesome
 
   slot default

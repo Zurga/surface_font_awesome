@@ -3,11 +3,7 @@ defmodule SurfaceFontAwesome.Layers do
   A wrapping component support the layering of icons.
   """
 
-  use Surface.Component
-
-  slot default
-
-  prop style, :string, default: ""
+  use SurfaceFontAwesome, :layers
 
   def render(assigns) do
     ~H"""
