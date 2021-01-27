@@ -1,13 +1,19 @@
 defmodule SurfaceFontAwesome.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+  @source_url "https://github.com/Zurga/surface_font_awesome"
+
   def project do
     [
       app: :surface_font_awesome,
-      version: "0.1.0",
-      elixir: "~> 1.11",
+      version: @version,
+      elixir: "~> 1.8",
+      description: "FontAwesome implemented with Surface components",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      docs: docs(),
+      package: %{licenses: ["MIT"], links: %{"Github" => @source_url}}
     ]
   end
 
@@ -24,7 +30,16 @@ defmodule SurfaceFontAwesome.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:surface, "~> 0.1.0"},
-      {:floki, ">= 0.27.0", only: :test}
+      {:floki, ">= 0.27.0", only: :test},
+      {:ex_doc, ">= 0.19.0", only: :docs}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "SurfaceFontAwesome",
+      source_ref: "v#{@version}",
+      source_url: @source_url
     ]
   end
 end
