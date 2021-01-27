@@ -1,13 +1,15 @@
 defmodule SurfaceFontAwesome.Icon do
-  @moduledoc ~s[
+  @moduledoc """
   A component that displays an icon compatible with the FontAwesome icons
-  
+
   Examples:
   ```elixir
-    ~H"""
-      <FA icon="camera" />
-    """
-  ]
+  ~H\"\"\"
+    <FA icon="camera" />
+  \"\"\"
+  ```
+  The values for the icon names are 
+  """
 
   use SurfaceFontAwesome, :icon
 
@@ -53,4 +55,7 @@ defmodule SurfaceFontAwesome.Icon do
       }} :attrs={{ attrs }} style={{ style }}></i>
     """
   end
+
+  @doc "Returns the supported icon names that can be used for the icon and mask props"
+  def icon_names(), do: @icon_names
 end
