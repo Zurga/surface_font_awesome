@@ -37,7 +37,7 @@ by adding `surface_font_awesome` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:surface_font_awesome, "~> 0.1.1"}
+    {:surface_font_awesome, "~> 0.1.2"}
   ]
 end
 ```

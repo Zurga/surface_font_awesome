@@ -1,7 +1,7 @@
 defmodule SurfaceFontAwesome.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.1.2"
   @source_url "https://github.com/Zurga/surface_font_awesome"
 
   def project do
@@ -31,7 +31,7 @@ defmodule SurfaceFontAwesome.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:surface, "~> 0.2.0"},
-      {:surface_formatter, git: "https://github.com/surface-ui/surface_formatter"},
+      {:surface_formatter, "~> 0.2.0"},
       {:floki, ">= 0.27.0", only: :test},
       {:ex_doc, ">= 0.19.0", only: :dev, runtime: false}
     ]
