@@ -21,7 +21,11 @@ defmodule SurfaceFontAwesome.CounterLayer do
     transforms = (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
 
     ~H"""
-    <span class={{"fa-layers-counter", @class, "fa-layers-#{@position}": @position}} :attrs={{transforms}} style={{@style}}><slot /></span>
+    <span
+      class={{ "fa-layers-counter", @class, "fa-layers-#{@position}": @position }}
+      :attrs={{ transforms }}
+      style={{ @style }}
+    ><slot /></span>
     """
   end
 end

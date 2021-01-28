@@ -20,7 +20,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-        <Icon icon="500px" size="4x"/>
+        <Icon icon="500px" size="4x" />
         """
       end
 
@@ -33,7 +33,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-        <Icon icon="500px" transform="grow-10 left-20"/>
+        <Icon icon="500px" transform="grow-10 left-20" />
         """
       end
 
@@ -59,7 +59,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-        <Icon icon="camera" icon_style="duotone" secondary_color="blue" primary_opacity={{0.6}} />
+        <Icon icon="camera" icon_style="duotone" secondary_color="blue" primary_opacity={{ 0.6 }} />
         """
       end
 
@@ -72,7 +72,12 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-        <Icon icon="pencil-alt" transform="shrink-10 up-.5" mask="comment" style="background: MistyRose"/>
+        <Icon
+          icon="pencil-alt"
+          transform="shrink-10 up-.5"
+          mask="comment"
+          style="background: MistyRose"
+        />
         """
       end
 
@@ -85,7 +90,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-          <Icon icon="camera" rotate="90" />
+        <Icon icon="camera" rotate="90" />
         """
       end
 
@@ -98,7 +103,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-          <Icon icon="camera" flip="vertical" />
+        <Icon icon="camera" flip="vertical" />
         """
       end
 
@@ -111,12 +116,12 @@ defmodule SurfaceFontAwesome.Components.IconTest do
     html =
       render_surface do
         ~H"""
-          <Icon icon="camera" flip="vertical" rotate="90"/>
+        <Icon icon="camera" flip="vertical" rotate="90" />
         """
       end
 
     assert html =~ """
-             <span class="fa-flip-vertical">
+           <span class="fa-flip-vertical">
              <i class="fas fa-camera fa-rotate-90"></i>
            </span>
            """

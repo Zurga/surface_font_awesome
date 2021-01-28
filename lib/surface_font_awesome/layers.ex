@@ -7,8 +7,8 @@ defmodule SurfaceFontAwesome.Layers do
 
   def render(assigns) do
     ~H"""
-    <span class="fa-layers fa-fw" style={{@style}}>
-      <slot/>
+    <span class="fa-layers fa-fw" style={{ @style }}>
+      <slot />
     </span>
     """
   end

@@ -11,7 +11,7 @@ defmodule SurfaceFontAwesome.LayerTest do
         ~H"""
         <FALayers>
           <Icon icon="camera" size="1x" />
-          <Icon icon="ban" size="2x"/>
+          <Icon icon="ban" size="2x" />
         </FALayers>
         """
       end
@@ -31,7 +31,7 @@ defmodule SurfaceFontAwesome.LayerTest do
         ~H"""
         <FALayers style="background: blue">
           <Icon icon="camera" size="1x" />
-          <Icon icon="ban" size="2x"/>
+          <Icon icon="ban" size="2x" />
         </FALayers>
         """
       end
@@ -50,7 +50,7 @@ defmodule SurfaceFontAwesome.LayerTest do
       render_surface do
         ~H"""
         <FALayers>
-          <Icon icon="calendar"/>
+          <Icon icon="calendar" />
           <TextLayer class="fa-inverse" transform="shrink-8 down-3" style="font-weight:900">27</TextLayer>
         </FALayers>
         """
@@ -70,7 +70,7 @@ defmodule SurfaceFontAwesome.LayerTest do
       render_surface do
         ~H"""
         <FALayers>
-          <Icon icon="calendar"/>
+          <Icon icon="calendar" />
           <CounterLayer position="top-right" transform="shrink-8 down-3" style="font-weight:900">27</CounterLayer>
         </FALayers>
         """

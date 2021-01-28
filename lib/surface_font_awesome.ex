@@ -21,8 +21,8 @@ alias SurfaceFontAwesome.TextLayer
 
 ~H"""
 <Layers>
-    <FA icon="calendar">
-    <TextLayer>28</TextLayer>
+  <FA icon="calendar" />
+  <TextLayer>28</TextLayer>
 </Layers>
 """
 ```

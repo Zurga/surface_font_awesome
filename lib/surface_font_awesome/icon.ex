@@ -16,7 +16,7 @@ defmodule SurfaceFontAwesome.Icon do
   def render(%{rotate: rotate, flip: flip} = assigns)
       when not is_nil(rotate) and not is_nil(flip) do
     ~H"""
-    <span class={{"fa-flip-#{@flip}"}}>
+    <span class={{ "fa-flip-#{@flip}" }}>
       {{ render(Map.put(assigns, :flip, nil)) }}
     </span>
     """
@@ -48,11 +48,17 @@ defmodule SurfaceFontAwesome.Icon do
     fa_class = "fa" <> (assigns.icon_style |> String.first() |> String.downcase())
 
     ~H"""
-    <i class={{fa_class, "fa-#{@icon}", 
-        "fa-#{@size}": @size, 
+    <i
+      class={{
+        fa_class,
+        "fa-#{@icon}",
+        "fa-#{@size}": @size,
         "fa-rotate-#{@rotate}": @rotate,
-        "fa-flip-#{@flip}": @flip 
-      }} :attrs={{ attrs }} style={{ style }}></i>
+        "fa-flip-#{@flip}": @flip
+      }}
+      :attrs={{ attrs }}
+      style={{ style }}
+    />
     """
   end
 
