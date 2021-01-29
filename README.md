@@ -3,7 +3,7 @@
 This library provides components that implement FontAwsome 5 functionality. Currently supported is:
 
 -   Icons
--   Dualtone Icons
+-   Duotone Icons
 -   Icon layering (including text layers)
 -   Icon counters
 
