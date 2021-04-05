@@ -1,7 +1,7 @@
 defmodule SurfaceFontAwesome.MixProject do
   use Mix.Project
 
-  @version "0.1.2"
+  @version "0.1.3"
   @source_url "https://github.com/Zurga/surface_font_awesome"
 
   def project do
@@ -29,9 +29,9 @@ defmodule SurfaceFontAwesome.MixProject do
   defp deps do
     [
       {:surface, "~> 0.3.0"},
-      {:surface_formatter, git: "https://github.com/surface-ui/surface_formatter"},
+      {:surface_formatter, "~> 0.3.1"},
       {:floki, ">= 0.27.0", only: :test},
-      {:ex_doc, ">= 0.19.0", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.24", only: :dev, runtime: false}
     ]
   end
 
@@ -39,10 +39,17 @@ defmodule SurfaceFontAwesome.MixProject do
     [
       main: "SurfaceFontAwesome",
       source_ref: "v#{@version}",
-      source_url: @source_url
+      source_url: @source_url,
+      before_closing_head_tag: &add_fontawesome/1
     ]
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
+
+  defp add_fontawesome(:html) do
+    "<script src=\"https://use.fontawesome.com/releases/v5.0.0/js/all.js\"></script>"
+  end
+
+  defp add_fontawesome(_), do: ""
 end

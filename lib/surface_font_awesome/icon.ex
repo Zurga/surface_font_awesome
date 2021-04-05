@@ -8,6 +8,7 @@ defmodule SurfaceFontAwesome.Icon do
     <FA icon="camera" />
   \"\"\"
   ```
+  <i class="fas fa-camera"></i>
   The values for the icon names are 
   """
 
