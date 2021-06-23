@@ -4,21 +4,21 @@ defmodule SurfaceFontAwesome.Icon do
 
   Examples:
   ```elixir
-  ~H\"\"\"
+  ~F\"\"\"
     <FA icon="camera" />
   \"\"\"
   ```
   <i class="fas fa-camera"></i>
-  The values for the icon names are 
+  The values for the icon names are
   """
 
   use SurfaceFontAwesome, :icon
 
   def render(%{rotate: rotate, flip: flip} = assigns)
       when not is_nil(rotate) and not is_nil(flip) do
-    ~H"""
-    <span class={{ "fa-flip-#{@flip}" }}>
-      {{ render(Map.put(assigns, :flip, nil)) }}
+    ~F"""
+    <span class={"fa-flip-#{@flip}"}>
+      {render(Map.put(assigns, :flip, nil))}
     </span>
     """
   end
@@ -48,17 +48,17 @@ defmodule SurfaceFontAwesome.Icon do
 
     fa_class = "fa" <> (assigns.icon_style |> String.first() |> String.downcase())
 
-    ~H"""
+    ~F"""
     <i
-      class={{
+      class={
         fa_class,
         "fa-#{@icon}",
         "fa-#{@size}": @size,
         "fa-rotate-#{@rotate}": @rotate,
         "fa-flip-#{@flip}": @flip
-      }}
-      :attrs={{ attrs }}
-      style={{ style }}
+      }
+      {...attrs}
+      style={style}
     />
     """
   end

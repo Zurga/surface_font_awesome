@@ -4,7 +4,7 @@ defmodule SurfaceFontAwesome.Layers do
 
   Example:
   ```
-  ~H\"\"\"
+  ~F\"\"\"
   <Layers>
     <Icon icon="camera" size="1x" />
     <Icon icon="ban" size="2x" />
@@ -28,9 +28,9 @@ defmodule SurfaceFontAwesome.Layers do
   use SurfaceFontAwesome, :layers
 
   def render(assigns) do
-    ~H"""
-    <span class="fa-layers fa-fw" style={{ @style }}>
-      <slot />
+    ~F"""
+    <span class="fa-layers fa-fw" style={@style}>
+      <#slot />
     </span>
     """
   end

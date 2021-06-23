@@ -4,7 +4,7 @@ defmodule SurfaceFontAwesome.TextLayer do
 
   Example:
   ```elixir
-  ~H\"\"\"
+  ~F\"\"\"
     <Layers>
       <Icon icon="sms">
       <TextLayer>New text!</TextLayer>
@@ -20,8 +20,8 @@ defmodule SurfaceFontAwesome.TextLayer do
   def render(assigns) do
     transforms = (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
 
-    ~H"""
-    <span class={{ "fa-layers-text", @class }} :attrs={{ transforms }} style={{ @style }}><slot /></span>
+    ~F"""
+    <span class={"fa-layers-text", @class} {...transforms} style={@style}><#slot /></span>
     """
   end
 end
