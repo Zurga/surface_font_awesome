@@ -17,11 +17,11 @@ alias SurfaceFontAwesome.Layers
 alias SurfaceFontAwesome.TextLayer
 
 
-~H"""
+~F"""
 <FA icon="camera" />
 """
 
-~H"""
+~F"""
 <Layers>
     <FA icon="calendar">
     <TextLayer>28</TextLayer>
@@ -61,7 +61,7 @@ defmodule IconInput do
   prop placeholder, :string
 
   def render(assigns) do
-    ~H"""
+    ~F"""
       <div>{{ Icon.render(assigns) }}<input placeholder={{@placeholder}} /></div>
     """
   end
