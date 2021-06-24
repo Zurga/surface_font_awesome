@@ -15,11 +15,11 @@ alias SurfaceFontAwesome.Layers
 alias SurfaceFontAwesome.TextLayer
 
 
-~H"""
+~F"""
 <FA icon="camera" />
 """
 
-~H"""
+~F"""
 <Layers>
   <FA icon="calendar" />
   <TextLayer>28</TextLayer>

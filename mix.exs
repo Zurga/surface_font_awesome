@@ -28,8 +28,8 @@ defmodule SurfaceFontAwesome.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:surface, ">= 0.3.0 and < 0.5.0"},
-      {:surface_formatter, ">= 0.3.0 and < 0.5.0"},
+      {:surface, "~> 0.5.0"},
+      {:surface_formatter, "~> 0.5.0"},
       {:floki, ">= 0.27.0", only: :test},
       {:ex_doc, "~> 0.24", only: :dev, runtime: false}
     ]

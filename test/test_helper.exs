@@ -44,7 +44,7 @@ defmodule ComponentTestHelper do
       use Surface.LiveView; \
       def render(assigns) do; \
         assigns = Map.merge(assigns, #{inspect(assigns)}); \
-        ~H(#{code}); \
+        ~F(#{code}); \
       end; \
     end\
     """

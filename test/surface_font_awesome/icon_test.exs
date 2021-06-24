@@ -6,7 +6,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "basic icon usage" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="500px" />
         """
       end
@@ -19,7 +19,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "set icon size" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="500px" size="4x" />
         """
       end
@@ -32,7 +32,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "transformations of the icon" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="500px" transform="grow-10 left-20" />
         """
       end
@@ -45,7 +45,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "setting the primary color without duotone icon should be ignored" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="camera" primary_color="blue" />
         """
       end
@@ -58,8 +58,8 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "setting the primary opacity and secondary color" do
     html =
       render_surface do
-        ~H"""
-        <Icon icon="camera" icon_style="duotone" secondary_color="blue" primary_opacity={{ 0.6 }} />
+        ~F"""
+        <Icon icon="camera" icon_style="duotone" secondary_color="blue" primary_opacity={0.6} />
         """
       end
 
@@ -71,7 +71,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "masking of icons" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon
           icon="pencil-alt"
           transform="shrink-10 up-.5"
@@ -89,7 +89,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "rotating icons" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="camera" rotate="90" />
         """
       end
@@ -102,7 +102,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "flipping icons" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="camera" flip="vertical" />
         """
       end
@@ -115,7 +115,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
   test "flipping and rotating icons" do
     html =
       render_surface do
-        ~H"""
+        ~F"""
         <Icon icon="camera" flip="vertical" rotate="90" />
         """
       end
