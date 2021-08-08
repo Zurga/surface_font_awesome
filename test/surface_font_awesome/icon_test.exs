@@ -12,7 +12,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
       end
 
     assert html =~ """
-           <i class="fas fa-500px"></i>
+           <i class="fab fa-500px"></i>
            """
   end
 
@@ -25,7 +25,20 @@ defmodule SurfaceFontAwesome.Components.IconTest do
       end
 
     assert html =~ """
-           <i class="fas fa-500px fa-4x"></i>
+           <i class="fab fa-500px fa-4x"></i>
+           """
+  end
+
+  test "style is detected by the icon name" do
+    html =
+      render_surface do
+        ~F"""
+        <Icon icon="twitter" />
+        """
+      end
+
+    assert html =~ """
+           <i class="fab fa-twitter"></i>
            """
   end
 
@@ -38,7 +51,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
       end
 
     assert html =~ """
-           <i data-fa-transform="grow-10 left-20" class="fas fa-500px"></i>
+           <i data-fa-transform="grow-10 left-20" class="fab fa-500px"></i>
            """
   end
 

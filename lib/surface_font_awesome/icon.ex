@@ -46,7 +46,12 @@ defmodule SurfaceFontAwesome.Icon do
           Map.get(assigns, :style, "")
       end
 
-    fa_class = "fa" <> (assigns.icon_style |> String.first() |> String.downcase())
+    fa_class =
+      if assigns.icon_style != "" do
+        "fa" <> (String.first(assigns.icon_style) |> String.downcase())
+      else
+        Map.get(@icon_names, assigns.icon, "fas")
+      end
 
     ~F"""
     <i
@@ -64,5 +69,5 @@ defmodule SurfaceFontAwesome.Icon do
   end
 
   @doc "Returns the supported icon names that can be used for the icon and mask props"
-  def icon_names(), do: @icon_names
+  def icon_names(), do: Map.keys(@icon_names)
 end

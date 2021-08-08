@@ -58,18 +58,23 @@ alias SurfaceFontAwesome.TextLayer
                   |> Path.join("font-awesome-icons.txt")
                   |> File.read!()
                   |> String.split("\n")
+                  |> Enum.flat_map(fn line ->
+                    [style | names] = String.split(line, " ")
+                    Enum.map(names, &{&1, style})
+                  end)
+                  |> Enum.into(%{})
 
       @doc "The icon to display"
-      prop icon, :string, required: true, values: @icon_names
+      prop icon, :string, required: true, values: Map.keys(@icon_names)
 
       @doc "Specifies if the icon should be animated and which animation to use"
       prop animated, :string, values: ["spin", "pulse"]
 
       @doc "Specifies the style of the icon. Allows for the selection of Pro icon styles"
-      prop icon_style, :string, default: "solid", values: ["solid", "regular", "light", "duotone"]
+      prop icon_style, :string, default: "", values: ["solid", "regular", "light", "duotone"]
 
       @doc "Sets a mask to use with the icon"
-      prop mask, :string, values: @icon_names
+      prop mask, :string, values: Map.keys(@icon_names)
 
       @doc "Set the rotation of the icon with predefined angles"
       prop rotate, :string, values: ["90", "180", "270"]
