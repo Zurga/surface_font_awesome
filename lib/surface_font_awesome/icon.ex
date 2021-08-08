@@ -31,7 +31,7 @@ defmodule SurfaceFontAwesome.Icon do
     }
 
     style =
-      if is_binary(assigns.icon_style) and String.downcase(assigns.icon_style) == "duotone" do
+      if String.downcase(assigns.icon_style) == "duotone" do
         Enum.reduce(@style_attrs, Map.get(assigns, :style, ""), fn attr, acc ->
           if value = Map.get(assigns, attr) do
             key = String.replace(to_string(attr), "_", "-")
@@ -58,7 +58,8 @@ defmodule SurfaceFontAwesome.Icon do
         "fa-#{@icon}",
         "fa-#{@size}": @size,
         "fa-rotate-#{@rotate}": @rotate,
-        "fa-flip-#{@flip}": @flip
+        "fa-flip-#{@flip}": @flip,
+        "fa-#{@animated}": @animated
       }
       {...attrs}
       style={style}
