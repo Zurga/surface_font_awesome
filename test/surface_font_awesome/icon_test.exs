@@ -134,7 +134,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
       end
 
     assert html =~ """
-           <span class="fa-flip-vertical">
+           <span class="fa-flip-vertical" style="display: inline-block">
              <i class="fas fa-camera fa-rotate-90"></i>
            </span>
            """

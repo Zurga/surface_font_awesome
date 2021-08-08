@@ -17,7 +17,7 @@ defmodule SurfaceFontAwesome.Icon do
   def render(%{rotate: rotate, flip: flip} = assigns)
       when not is_nil(rotate) and not is_nil(flip) do
     ~F"""
-    <span class={"fa-flip-#{@flip}"}>
+    <span class={"fa-flip-#{@flip}"} style="display: inline-block">
       {render(Map.put(assigns, :flip, nil))}
     </span>
     """
@@ -31,19 +31,17 @@ defmodule SurfaceFontAwesome.Icon do
     }
 
     style =
-      case assigns.icon_style |> String.downcase() do
-        "duotone" ->
-          Enum.reduce(@style_attrs, Map.get(assigns, :style, ""), fn attr, acc ->
-            if value = Map.get(assigns, attr) do
-              key = String.replace(to_string(attr), "_", "-")
-              acc <> "--fa-#{key}: #{value};"
-            else
-              acc
-            end
-          end)
-
-        _ ->
-          Map.get(assigns, :style, "")
+      if is_binary(assigns.icon_style) and String.downcase(assigns.icon_style) == "duotone" do
+        Enum.reduce(@style_attrs, Map.get(assigns, :style, ""), fn attr, acc ->
+          if value = Map.get(assigns, attr) do
+            key = String.replace(to_string(attr), "_", "-")
+            acc <> "--fa-#{key}: #{value};"
+          else
+            acc
+          end
+        end)
+      else
+        Map.get(assigns, :style, "")
       end
 
     fa_class =
