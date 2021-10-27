@@ -1,5 +1,5 @@
 defmodule SurfaceFontAwesome.TextLayer do
-  @doc """
+  @moduledoc """
   A component that represents a text layer to be overlayed on icons.
 
   Example:
