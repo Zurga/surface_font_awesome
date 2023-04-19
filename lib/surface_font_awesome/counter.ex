@@ -1,5 +1,5 @@
 defmodule SurfaceFontAwesome.CounterLayer do
-  @doc """
+  @moduledoc """
   This component will display a counter. It can be put on top of other icons by adding it to a `<Layers>` component.
   Whatever is put inside the default slot will be the value of the counter.
   Positioning of the counter can be done using its `position` prop.
