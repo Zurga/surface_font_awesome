@@ -1,7 +1,7 @@
 defmodule SurfaceFontAwesome.MixProject do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
   @source_url "https://github.com/Zurga/surface_font_awesome"
 
   def project do
@@ -28,8 +28,7 @@ defmodule SurfaceFontAwesome.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:surface, "> 0.5.0"},
-      {:surface_formatter, "~> 0.7.5"},
+      {:surface, "~> 0.10.0"},
       {:floki, ">= 0.27.0", only: :test},
       {:ex_doc, "~> 0.24", only: :dev, runtime: false}
     ]
