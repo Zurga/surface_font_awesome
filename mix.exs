@@ -1,7 +1,7 @@
 defmodule SurfaceFontAwesome.MixProject do
   use Mix.Project
 
-  @version "0.4.2"
+  @version "0.5.0"
   @source_url "https://github.com/Zurga/surface_font_awesome"
 
   def project do

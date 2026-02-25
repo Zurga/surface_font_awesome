@@ -16,14 +16,20 @@ defmodule SurfaceFontAwesome.CounterLayer do
   """
 
   use SurfaceFontAwesome, :counter_layer
+  data transforms, :any
 
   def render(assigns) do
-    transforms = (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
+    assigns =
+      assign(
+        assigns,
+        :transforms,
+        (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
+      )
 
     ~F"""
     <span
       class={"fa-layers-counter", @class, "fa-layers-#{@position}": @position}
-      {...transforms}
+      {...@transforms}
       style={@style}
     ><#slot /></span>
     """

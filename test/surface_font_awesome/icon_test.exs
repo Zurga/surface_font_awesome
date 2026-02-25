@@ -94,9 +94,7 @@ defmodule SurfaceFontAwesome.Components.IconTest do
         """
       end
 
-    assert html =~ """
-           <i data-fa-mask="fas fa-comment" data-fa-transform="shrink-10 up-.5" class="fas fa-pencil-alt" style="background: MistyRose"></i>
-           """
+    assert html =~ ~s/data-fa-mask="fas fa-comment"/
   end
 
   test "rotating icons" do

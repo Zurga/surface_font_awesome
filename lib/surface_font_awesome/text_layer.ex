@@ -15,13 +15,19 @@ defmodule SurfaceFontAwesome.TextLayer do
   """
   use SurfaceFontAwesome
 
+  data transforms, :any
   slot default
 
   def render(assigns) do
-    transforms = (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
+    assigns =
+      assign(
+        assigns,
+        :transforms,
+        (assigns.transform && %{"data-fa-transform": assigns.transform || ""}) || %{}
+      )
 
     ~F"""
-    <span class={"fa-layers-text", @class} {...transforms} style={@style}><#slot /></span>
+    <span class={"fa-layers-text", @class} {...@transforms} style={@style}><#slot /></span>
     """
   end
 end

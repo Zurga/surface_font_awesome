@@ -13,6 +13,9 @@ defmodule SurfaceFontAwesome.Icon do
   """
 
   use SurfaceFontAwesome, :icon
+  data attrs, :any
+  # data style, :any
+  data fa_class, :any
 
   def render(%{rotate: rotate, flip: flip} = assigns)
       when not is_nil(rotate) and not is_nil(flip) do
@@ -25,44 +28,47 @@ defmodule SurfaceFontAwesome.Icon do
 
   @style_attrs ~w/primary_color secondary_color primary_opacity secondary_opacity/a
   def render(assigns) do
-    attrs = %{
-      "data-fa-transform": assigns.transform || "",
-      "data-fa-mask": (assigns.mask && "fas fa-#{assigns.mask}") || ""
-    }
-
-    style =
-      if String.downcase(assigns.icon_style) == "duotone" do
-        Enum.reduce(@style_attrs, Map.get(assigns, :style, ""), fn attr, acc ->
-          if value = Map.get(assigns, attr) do
-            key = String.replace(to_string(attr), "_", "-")
-            acc <> "--fa-#{key}: #{value};"
-          else
-            acc
-          end
-        end)
-      else
-        Map.get(assigns, :style, "")
-      end
-
-    fa_class =
-      if assigns.icon_style != "" do
-        "fa" <> (String.first(assigns.icon_style) |> String.downcase())
-      else
-        Map.get(@icon_names, assigns.icon, "fas")
-      end
+    assigns =
+      assign(assigns, :attrs, %{
+        "data-fa-transform": assigns.transform || "",
+        "data-fa-mask": (assigns.mask && "fas fa-#{assigns.mask}") || ""
+      })
+      |> assign(
+        :style,
+        if String.downcase(assigns.icon_style) == "duotone" do
+          Enum.reduce(@style_attrs, Map.get(assigns, :style, ""), fn attr, acc ->
+            if value = Map.get(assigns, attr) do
+              key = String.replace(to_string(attr), "_", "-")
+              acc <> "--fa-#{key}: #{value};"
+            else
+              acc
+            end
+          end)
+        else
+          Map.get(assigns, :style, "")
+        end
+      )
+      |> assign(
+        :fa_class,
+        if assigns.icon_style != "" do
+          "fa" <> (String.first(assigns.icon_style) |> String.downcase())
+        else
+          Map.get(@icon_names, assigns.icon, "fas")
+        end
+      )
 
     ~F"""
     <i
       class={
-        fa_class,
+        @fa_class,
         "fa-#{@icon}",
         "fa-#{@size}": @size,
         "fa-rotate-#{@rotate}": @rotate,
         "fa-flip-#{@flip}": @flip,
         "fa-#{@animated}": @animated
       }
-      {...attrs}
-      style={style}
+      {...@attrs}
+      style={@style}
     />
     """
   end
